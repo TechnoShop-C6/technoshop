@@ -1,64 +1,88 @@
 import React from "react";
+import axios from "axios";
 
+import Login from "./Login.jsx"
 class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      users:[],
       email: "",
-      username: "",
+      name: "",
       password: "",
-      phoneNumber: ""
+      phoneNumber: "",
+      check:""
     };
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.addUser=this.addUser.bind(this);
   }
-
-  handleChange(e) {
-    this.setState({
-        [e.target.name] : e.target.value
-    });
-  }
-
-  handleSubmit(){
-
+  addUser(e){
+    e.preventDefault()
+    const newUser = {
+      email:this.state.email,
+      name: this.state.name,
+      password:this.state.password,
+      phoneNumber: this.state.phoneNumber,
+    }
+  axios.post("http://localhost:3000/user/add",newUser)
+  .then(res => console.log(res.data));
+      this.setState({
+        email: "",
+        name: "",
+        password: "",
+        phoneNumber: "",
+        check:"Login"
+      })
   }
 
   render() {
+   if(this.state.check === ""){
     return (
       <div className=" SignInForm ">
-        <form onSubmit={this.handleSubmit}>
-          <label>UserName :</label>
+        <form onSubmit={(e)=>this.addUser(e)}>
           <input
             type="text"
-            name="username"
-            value={this.state.username}
-            onChange={this.handleChange}
-          />
-          <label>Email :</label>
+            name="user"
+            placeholder="UserName "
+            value={this.state.name}
+            onChange={(e)=>{this.setState({name:e.target.value})}}
+          /><br></br>
+        
           <input
             type="email"
             name="email"
+            placeholder="Email"
             value={this.state.email}
-            onChange={this.handleChange}
-          />
-          <label>Password</label>
+            onChange={(e)=>{this.setState({email:e.target.value})}}
+          /><br></br>
+          
           <input
             type="password"
             name="password"
+            placeholder="password "
             value={this.state.password}
-            onChange={this.handleChange}
-          />
-          <label>Phone Number :</label>
+            onChange={(e)=>{this.setState({password:e.target.value})}}
+          /><br></br>
+          
           <input
             type="number"
             name="phoneNumber"
+            placeholder="Phone number"
             value={this.state.phoneNumber}
-            onChange={this.handleChange}
-          />
-          <input type="submit" value="SignIn" />
+            onChange={(e)=>{this.setState({phoneNumber:e.target.value})}}
+          /><br></br>
+
+          <input type="submit" value="Sign In" /><br></br>
         </form>
       </div>
     );
+   }else {
+     return (
+       <div>
+         <Login/>
+       </div>
+     )
+   }
+   
   }
 }
 
