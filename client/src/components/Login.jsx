@@ -12,12 +12,11 @@ class Login extends React.Component {
   }
   
   handleChange(e) {
-    var name = e.target.name;
-    var value = e.target.value;
     this.setState({
-        [name] : value
+        [e.target.name] : e.target.value
     });
   }
+
 
 
   handleSubmit(){
@@ -36,14 +35,14 @@ class Login extends React.Component {
           <label>User Name</label>
           <input
             type="text"
-            data-test="username"
+            name="username"
             value={this.state.username}
             onChange={this.handleChange}
           />
           <label>Password</label>
           <input
             type="password"
-            data-test="password"
+            name="password"
             value={this.state.password}
             onChange={this.handleChange}
           />
