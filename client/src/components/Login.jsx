@@ -27,7 +27,7 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className=" LoginForm ">
+      <div className=" accessory,  ">
         <form onSubmit={this.handleSubmit}>
           {
             //handle error condition

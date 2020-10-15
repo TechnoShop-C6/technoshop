@@ -35,10 +35,12 @@ class Laptop extends React.Component {
             <h3>{product.name}</h3>
             <h3>{product.category}</h3>
             <h3>{product.price}</h3>
-            <p>{product.property}</p>
+            <div className='paragraph'>
+            <p className='paragraph'>{product.property}</p>
+            </div>
             <button>Edit</button>
             <button>Delete</button>
-            <button>Add to Chart</button>
+            <button>Add</button>
 
          </div>))
         return(

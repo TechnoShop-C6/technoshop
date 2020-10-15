@@ -39,7 +39,7 @@ class Phone extends React.Component {
             <p>{product.property}</p>
             <button>Edit</button>
             <button>Delete</button>
-            <button>Add to Chart</button>
+            <button>Add</button>
 
          </div>))
         return(

@@ -42,6 +42,8 @@ class App extends React.Component {
           </div>
         </div>
         <div className="main" > 
+        <Laptop />
+        <Phone />
         <Accessory />
         </div>
       </div>
