@@ -1,21 +1,18 @@
 import React from "react";
-import Login from "./Login.jsx";
-import SignIn from "./SignIn.jsx";
+
 
 class App extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
+    this.state = {
+      user:this.props.name
+    }
   }
 
   render() {
     return (
       <div>
-        <Login />
-
-
-
-
-        <SignIn />
+       <h1>Welcome in our project : {this.state.user}</h1>
       </div>
     );
   }
