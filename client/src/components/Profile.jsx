@@ -34,9 +34,11 @@ class Profile extends React.Component {
               url : "",
             });
           })
+          
           .catch(error => {
             console.error(error);
           })
+          console.log(this.state)
         }
         delete(e,id){
             e.preventDefault();
@@ -53,7 +55,11 @@ class Profile extends React.Component {
 
 
     render(){
-        const myCart = this.state.data.filter((item) => item.category === 'laptop').map ((product) => ( 
+    
+        const myCartPrice = this.state.data.filter((item) => item.user === this.state.user).map((item)=>item.price*1)
+        {console.log(myCartPrice)}
+        const total =myCartPrice.reduce((result ,element ) => result += element , 0 )
+        const myCart = this.state.data.filter((item) => item.user === this.state.user).map ((product) => ( 
          <div key={product._id}>
             <img src={product.url} className="post-image"/>
             <h3>{product.name}</h3>
@@ -61,13 +67,19 @@ class Profile extends React.Component {
             <h3>{product.price}</h3>
             <p>{product.property}</p>
             
+            
             <button onClick={(e)=> this.delete(e,product._id)}>Delete</button>
+
 
          </div>))
         return(
             <div>
+            <h1>Welcome {this.state.user} in your profile </h1>
+            <h2>The amount of your purchases is : {total} DT</h2>
+            
                {myCart}
                <div>
+               <button onClick={(e)=> this.confirme(e,product._id)}> Confirme my purchases </button>
                <button onClick={(e)=> this.deleteAll(e)}>Delete All</button>
                </div>
             </div>
