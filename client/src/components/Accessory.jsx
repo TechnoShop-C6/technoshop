@@ -31,14 +31,14 @@ class Accessory extends React.Component {
     render(){
         const listOfAccessories = this.state.data.filter((item) => (item.category !== 'laptop' && item.category !== 'phone'  )).map ((product) => ( 
          <div key={product.id}>
-            <img src={product.url} className="post-image"/>
+            <img  src={product.url} className="post-image"/>
             <h3>{product.name}</h3>
             <h3>{product.category}</h3>
             <h3>{product.price}</h3>
             <p>{product.property}</p>
             <button>Edit</button>
             <button>Delete</button>
-            <button>Add to Chart</button>
+            <button>Add</button>
 
          </div>))
         return(
