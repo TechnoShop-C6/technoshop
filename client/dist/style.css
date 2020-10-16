@@ -75,3 +75,9 @@ button{
 p{
   font-weight: bold;
 }
+
+.oussama-img {
+    width: 200px;
+    height: 200px;
+    margin: 200px 80px 95px;
+}
