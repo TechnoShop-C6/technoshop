@@ -1,14 +1,14 @@
 .navbar {
     background-color:black;
     margin: 0px;
-    padding: 5px;
+    padding: 10px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     font-family: 'Francois One';
   }
   .nav {
-    padding: 5px;
+    padding: 10px;
     margin-right: 5px;
     font-size: 1.1em;
     color: #ffffff;
@@ -20,10 +20,6 @@
     margin-left: 10px;
     font-family: 'Francois One';
     color: #ffffff;
-  }
-  .post-image{
-    width: 200px;
-    height: 200px;
   }
 
   body {
@@ -39,16 +35,12 @@
 }
 
 button {
-    background-color: grey;
+    background-color:black;
     color: white;
     border: none;
-    border-radius: 48px;
-    font-size: 18px;
-    line-height: 40px;
+    border-radius: 6px;
+    font-size: 20px;
+    line-height: 48px;
     padding: 0 16px;
-    width: 100px;
-}
-
-.paragraph{
-  box-sizing: border-box;
-}
+    width: 145px;
+} 

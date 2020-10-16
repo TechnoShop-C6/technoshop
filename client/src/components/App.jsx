@@ -1,6 +1,7 @@
 import React from "react";
 
-
+import AdminAcceuil from "./AdminAcceuil.jsx"
+import UserAcceuil from "./UserAcceuil.jsx"
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -8,42 +9,21 @@ class App extends React.Component {
       user:this.props.name
     }
   }
-
- 
-
   render() {
-    return (
+    if(this.state.user === "admin"){
+      return (
         <div>
-          <div className="navbar">
-          <span className="logo"
-            onClick={() => this.changeView('feed')}>
-            TECHNOSHOP💻
-          </span>
-             <span className="nav" onClick={() => this.changeView("Laptop")}>
-             Laptop
-            </span>
-            <span className="nav" onClick={() => this.changeView("Phone")}>
-            {" "}
-            Phone
-           </span>
-           <span className="nav" onClick={() => this.changeView("Accessory")}>
-           {" "}
-           Accessory
-          </span>
-          <div className="leftnav">
-            <span className="nav" onClick={() => this.changeView("Profile")}>
-              {" "}
-             Profile
-             </span>
-          </div>
+          <AdminAcceuil/>
         </div>
-        <div className="main" > 
-        <Laptop />
-        <Phone />
-        <Accessory />
+      )
+    }else {
+      return (
+        <div>
+          <UserAcceuil name={this.state.user}/>
         </div>
-      </div>
-    );
+      )
+    }
   }
 }
+
 export default App;
