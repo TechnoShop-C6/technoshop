@@ -1,15 +1,11 @@
 import React from "react";
-import Login from "./Login.jsx";
-import SignIn from "./SignIn.jsx";
-import Laptop from './Laptop.jsx';
-import Phone from './Phone.jsx';
-import Accessory from './Accessory.jsx'
+
 
 class App extends React.Component {
   constructor(props) {
-    super(props);
-    this.state={
-      user :''
+    super(props)
+    this.state = {
+      user:this.props.name
     }
   }
 
