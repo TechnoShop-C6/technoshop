@@ -45,7 +45,11 @@ class Login extends React.Component {
   render() {
     if(this.state.check === ""){
       return (
+        <div>
+          <h1 className="tit">TECHNOSHOP 🛒</h1>
+       
         <div className=" SignInForm ">
+        
           <form onSubmit={(e)=>this.check(e)}>
             <input
               type="text"
@@ -66,6 +70,7 @@ class Login extends React.Component {
             <input type="submit" value="Sign In" /><br></br>
           </form>
         </div>
+      </div>
       )
     }else if(this.state.check === "signin"){
       return (
