@@ -65,7 +65,6 @@ class Accessory extends React.Component {
         }
 
 
-
     render(){
         const listOfAccessories = this.state.data.filter((item) => (item.category !== 'laptop' && item.category !== 'phone'  )).map ((product) => ( 
          <div key={product._id}>
