@@ -71,7 +71,7 @@ class Laptop extends React.Component {
             <h3>{product.price}</h3>
             <p>{product.property}</p>
             
-            <button onClick={(e)=>this.add(e,product._id)}>Add to my cart </button>
+            <button onClick={(e)=>this.add(e,product._id)}>BUY</button>
 
          </div>))
         return(
