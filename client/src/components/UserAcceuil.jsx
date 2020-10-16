@@ -17,11 +17,8 @@ class UserAcceuil extends React.Component {
         render(){
             return(
                 <div>
-                <Laptop name={this.state.user}/>
-                <Phone name={this.state.user}/>
-                <Accessory name={this.state.user}/>
-                <Profile name={this.state.user}/>
-               {/* <div className="navbar">
+              
+               <div className="navbar">
             <span className="logo"
               onClick={() => this.changeView('feed')}>
                  TECHNOSHOP💻
@@ -45,8 +42,12 @@ class UserAcceuil extends React.Component {
            </div>
             </div>
             <div className="main" > 
-             <Accessory />
-          </div> */}
+                <Laptop name={this.state.user}/>
+                <Phone name={this.state.user}/>
+                <Accessory name={this.state.user}/>
+                <Profile name={this.state.user}/>
+          </div>
+
                 </div>
             )
         }
