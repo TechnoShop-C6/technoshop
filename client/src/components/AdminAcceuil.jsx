@@ -90,7 +90,11 @@ class AdminAcceuil extends React.Component {
          </div>
          ))
         return(
+          
             <div>
+            
+            <h1 className="boss">Welcome Boss 💰💰</h1>
+            
             <form className="SignInForm" onSubmit={(e)=>this.addNewProduct(e,this.state.id)}>
                 <input type="text" placeholder="Name" onChange={(e)=>{this.setState({name:e.target.value})}} value={this.state.name}/>
                 <input type="text" placeholder="Category" onChange={(e)=>{this.setState({category:e.target.value})}} value={this.state.category}/>
@@ -102,6 +106,7 @@ class AdminAcceuil extends React.Component {
                <div>
                {list}
                </div>
+               <a href="javascript:location.reload(true)">Log Out</a>  
             </div>
         )
     }
