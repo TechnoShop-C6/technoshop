@@ -1,7 +1,7 @@
 .navbar {
-    background-color:black;
+    background-color:#24292e;
     margin: 0px;
-    padding: 10px;
+    padding: 7px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -12,6 +12,14 @@
     margin-right: 5px;
     font-size: 1.1em;
     color: #ffffff;
+  }
+
+  .nav-selected {
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    margin-right: 5px;
+    font-size: 1.3em;
   }
   .logo {
     font-weight: bold;
@@ -33,12 +41,9 @@
 
 .main{
     text-align: center;
+    margin: 30px;
 }
 
-/* button {
-  
-    color: white;
-}  */
 
 .SignInForm{
   background-color: #fff;
@@ -63,6 +68,7 @@ input{
 .post-image {
   width: 300px;
   height: 200px;
+  border-radius: 30px;
 }
 
 button{
