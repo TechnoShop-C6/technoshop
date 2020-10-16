@@ -95,3 +95,13 @@ p{
   font-size: 500%;
   font-style: italic;
 }
+
+.table{
+  margin-left: 260px;
+}
+
+.namediv{
+  margin-top: -80px;
+  font-size: large;
+  font-weight: bold;
+}
