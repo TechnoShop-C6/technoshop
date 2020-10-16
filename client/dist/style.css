@@ -81,3 +81,11 @@ p{
     height: 200px;
     margin: 200px 80px 95px;
 }
+.boss{
+  text-align: center;
+}
+.tit{
+  text-align: center;
+  font-size: 500%;
+  font-style: italic;
+}

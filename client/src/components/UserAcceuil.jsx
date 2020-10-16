@@ -65,7 +65,7 @@ class UserAcceuil extends React.Component {
                    <div className="navbar">
                 <span className="logo"
                   onClick={(e) => this.organisation(e)}>
-                     TECHNOSHOP💻
+                     TECHNOSHOP🛒
                      </span>
                 <span className="nav" onClick={(e) => this.laptop(e)}>
                      Laptop
@@ -98,7 +98,7 @@ class UserAcceuil extends React.Component {
                    <div className="navbar">
                 <span className="logo"
                   onClick={(e) => this.organisation(e)}>
-                     TECHNOSHOP💻
+                     TECHNOSHOP🛒
                      </span>
                 <span className="nav" onClick={(e) => this.laptop(e)}>
                      Laptop
@@ -131,7 +131,7 @@ class UserAcceuil extends React.Component {
                    <div className="navbar">
                 <span className="logo"
                   onClick={(e) => this.organisation(e)}>
-                     TECHNOSHOP💻
+                     TECHNOSHOP🛒
                      </span>
                 <span className="nav" onClick={(e) => this.laptop(e)}>
                      Laptop
@@ -164,7 +164,7 @@ class UserAcceuil extends React.Component {
                <div className="navbar">
             <span className="logo"
               onClick={(e) => this.organisation(e)}>
-                 TECHNOSHOP💻
+                 TECHNOSHOP🛒
                  </span>
             <span className="nav" onClick={(e) => this.laptop(e)}>
                  Laptop
@@ -197,7 +197,7 @@ class UserAcceuil extends React.Component {
                    <div className="navbar">
                 <span className="logo"
                   onClick={(e) => this.organisation(e)}>
-                     TECHNOSHOP💻
+                     TECHNOSHOP🛒
                      </span>
                 <span className="nav" onClick={(e) => this.laptop(e)}>
                      Laptop
