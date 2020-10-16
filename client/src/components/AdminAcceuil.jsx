@@ -102,6 +102,7 @@ class AdminAcceuil extends React.Component {
                <div>
                {list}
                </div>
+               <a href="javascript:location.reload(true)">Log Out</a>  
             </div>
         )
     }
