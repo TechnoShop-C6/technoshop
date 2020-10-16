@@ -30,6 +30,7 @@ class Accessory extends React.Component {
       })
       const newPurchase = {
         user:this.state.user,
+        
         name :this.state.name,
         category : this.state.category,
         property : this.state.property,
