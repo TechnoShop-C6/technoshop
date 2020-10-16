@@ -1,6 +1,7 @@
 import React from "react";
 
-
+import AdminAcceuil from "./AdminAcceuil.jsx"
+import UserAcceuil from "./UserAcceuil.jsx"
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -8,13 +9,21 @@ class App extends React.Component {
       user:this.props.name
     }
   }
-
   render() {
-    return (
-      <div>
-       <h1>Welcome in our project : {this.state.user}</h1>
-      </div>
-    );
+    if(this.state.user === "admin"){
+      return (
+        <div>
+          <AdminAcceuil/>
+        </div>
+      )
+    }else {
+      return (
+        <div>
+          <UserAcceuil name={this.state.user}/>
+        </div>
+      )
+    }
   }
 }
+
 export default App;
