@@ -79,7 +79,7 @@ class AdminAcceuil extends React.Component {
 
     render(){
         const list = this.state.data.map ((product) => ( 
-         <div key={product._id}>
+         <div className="main" key={product._id}>
             <img src={product.url} className="post-image"/>
             <h3>{product.name}</h3>
             <h3>{product.category}</h3>
@@ -91,7 +91,7 @@ class AdminAcceuil extends React.Component {
          ))
         return(
             <div>
-            <form onSubmit={(e)=>this.addNewProduct(e,this.state.id)}>
+            <form className="SignInForm" onSubmit={(e)=>this.addNewProduct(e,this.state.id)}>
                 <input type="text" placeholder="Name" onChange={(e)=>{this.setState({name:e.target.value})}} value={this.state.name}/>
                 <input type="text" placeholder="Category" onChange={(e)=>{this.setState({category:e.target.value})}} value={this.state.category}/>
                 <input type="text" placeholder="Property" onChange={(e)=>{this.setState({property:e.target.value})}} value={this.state.property}/>

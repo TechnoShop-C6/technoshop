@@ -61,14 +61,14 @@ class Profile extends React.Component {
             <h3>{product.price}</h3>
             <p>{product.property}</p>
             
-            <button onClick={(e)=> this.delete(e,product._id)}> Delete from my cart </button>
+            <button onClick={(e)=> this.delete(e,product._id)}>Delete</button>
 
          </div>))
         return(
             <div>
                {myCart}
                <div>
-               <button onClick={(e)=> this.deleteAll(e)}> Delete All my purchases </button>
+               <button onClick={(e)=> this.deleteAll(e)}>Delete All</button>
                </div>
             </div>
         )
