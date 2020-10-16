@@ -28,6 +28,7 @@ class Login extends React.Component {
     e.preventDefault();
     const arrayName = this.state.users.map((element)=>
     element.name )
+    console.log(arrayName)
     const arrayPassword = this.state.users.map((element)=>
     element.password )
     if(arrayName.indexOf(this.state.name) === -1){
@@ -72,14 +73,14 @@ class Login extends React.Component {
           <SignIn/>
         </div>
       )
-    }else if(this.state.check === "acceuil")
+    }else if(this.state.check === "acceuil"){
     return (
       <div>
           <App name={this.state.name}/>
           {console.log(this.state.name)}
       </div>
     )
-
+    }
   }
 }
 
