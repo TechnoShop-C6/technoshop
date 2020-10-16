@@ -35,10 +35,10 @@
     text-align: center;
 }
 
-button {
-    background-color:black;
+/* button {
+  
     color: white;
-} 
+}  */
 
 .SignInForm{
   background-color: #fff;
@@ -54,20 +54,24 @@ button {
 }
 
 input{
-  border-radius: 25px;
-  padding: 10px 40px 13px;;
+  border-radius: 8px;
+  padding: 13px 45px 17px;
   text-align: center;
   margin: 19px;
 }
 
 .post-image {
-  width: 250px;
+  width: 300px;
   height: 200px;
 }
 
 button{
-  border-radius: 25px;
-  padding: 10px 40px 13px;;
+  border-radius: 8px;
+  padding: 13px 45px 17px;
   text-align: center;
   margin: 19px;
+}
+
+p{
+  font-weight: bold;
 }
