@@ -40,8 +40,8 @@ class AdminAcceuil extends React.Component {
         }
         addNewProduct(e,id){
           e.preventDefault();
-         
           const newProduct = {
+            id:this.state.id,
             name :this.state.name,
             category : this.state.category,
             property : this.state.property,
@@ -61,7 +61,9 @@ class AdminAcceuil extends React.Component {
         edit(e,id){
           axios.get(`http://localhost:3000/product/${id}`)
           .then((res)=>{
+            console.log(res.data)
             this.setState({
+              id:res.data._id,
               name :res.data.name,
               category : res.data.category,
               property : res.data.property,
