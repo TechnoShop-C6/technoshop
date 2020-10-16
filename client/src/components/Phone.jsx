@@ -40,25 +40,21 @@ class Phone extends React.Component {
         add(e,id){
           e.preventDefault();
           axios.get(`http://localhost:3000/product/${id}`).then((res)=>{
-            this.setState({
+            const newPurchase = {
+              user:this.state.user,
               name :res.data.name,
               category : res.data.category,
-              property : res.data.property,
-              price : res.data.price,
+              property :  res.data.property,
+              price :  res.data.price,
               url : res.data.url
-            })
+            }
+            console.log("newPurchase" , newPurchase)
+            axios.post('http://localhost:3000/purchase/add', newPurchase ).then((res)=>{
+              this.componentDidMount()
+            }) 
+         
           })
-          const newPurchase = {
-            user:this.state.user,
-            name :this.state.name,
-            category : this.state.category,
-            property : this.state.property,
-            price : this.state.price,
-            url : this.state.url
-          }
-          axios.post('http://localhost:3000/purchase/add', newPurchase ).then((res)=>{
-            this.componentDidMount()
-          })
+         
         }
     render(){
         const listOfPhone = this.state.data.filter((item) => item.category === 'phone').map ((product) => ( 
