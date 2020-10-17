@@ -6,6 +6,7 @@ class AdminAcceuil extends React.Component {
         super()
         this.state={
             data : [],
+            comments : [],
             id:0,
             name :"",
             category : "",
@@ -16,6 +17,7 @@ class AdminAcceuil extends React.Component {
         this.addNewProduct=this.addNewProduct.bind(this)
         this.edit = this.edit.bind(this)
         this.delete = this.delete.bind(this)
+        this. deleteComment =  this.deleteComment.bind(this)
     }
     componentDidMount(){
         const options = {
@@ -34,10 +36,19 @@ class AdminAcceuil extends React.Component {
               url : "",
             });
           })
-          .catch(error => {
-            console.error(error);
-          })
-        }
+          const comments = {
+            method: 'get',
+            url: '/comment'
+          };
+          axios(comments)
+            .then(pro => {
+              this.setState({
+                comments: pro.data,
+              });
+            })
+      
+    }
+        
         addNewProduct(e,id){
           e.preventDefault();
           const newProduct = {
@@ -76,8 +87,18 @@ class AdminAcceuil extends React.Component {
           axios.delete(`http://localhost:3000/product/${id}`)
           .then(()=>{this.componentDidMount()})
         }
-
+        deleteComment(e,id){
+          e.preventDefault();
+       axios.delete(`http://localhost:3000/comment/${id}`)
+       .then(()=>{this.componentDidMount()})
+      }
     render(){
+      const MyComments = this.state.comments.map((item) =>(
+        <div key={item._id}>
+           <h3>{item.user} : {item.text}</h3>
+           <button onClick={(e)=>this.deleteComment(e,item._id)}>Delete</button>
+        </div>
+    ))
         const list = this.state.data.map ((product) => ( 
          <div className="main" key={product._id}>
             <img src={product.url} className="post-image"/>
@@ -105,6 +126,8 @@ class AdminAcceuil extends React.Component {
             </form>
                <div>
                {list}
+               <h2>Comments of users</h2>
+               {MyComments}
                </div>
                <a href="javascript:location.reload(true)">Log Out</a>  
             </div>
