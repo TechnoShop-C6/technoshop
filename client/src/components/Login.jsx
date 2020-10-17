@@ -35,7 +35,7 @@ class Login extends React.Component {
       alert("you should have account first , please sign In ")
       this.setState({check:"signin"})
     }else  if(arrayName.indexOf(this.state.name) !== -1 && arrayPassword[arrayName.indexOf(this.state.name)] !== this.state.password ){ 
-      alert("verifier your password ")
+      alert("verify your password ")
     }else  if(arrayName.indexOf(this.state.name) !== -1 && arrayPassword[arrayName.indexOf(this.state.name)] === this.state.password ){
       alert("Welcome " + this.state.name)
       this.setState({check:"acceuil"})

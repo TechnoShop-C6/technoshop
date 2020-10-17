@@ -67,7 +67,7 @@ class UserAcceuil extends React.Component {
                   onClick={(e) => this.organisation(e)}>
                      TECHNOSHOP🛒
                      </span>
-                <span className="nav" onClick={(e) => this.laptop(e)}>
+                <span className="nav" className="nav-selected" onClick={(e) => this.laptop(e)}>
                      Laptop
                       </span>
                 <span className="nav" onClick={(e) => this.phone(e)}> 
@@ -103,7 +103,7 @@ class UserAcceuil extends React.Component {
                 <span className="nav" onClick={(e) => this.laptop(e)}>
                      Laptop
                       </span>
-                <span className="nav" onClick={(e) => this.phone(e)}> 
+                <span className="nav" className="nav-selected" onClick={(e) => this.phone(e)}> 
                     {" "}
                    Phone
                   </span>
@@ -140,7 +140,7 @@ class UserAcceuil extends React.Component {
                     {" "}
                    Phone
                   </span>
-                <span className="nav" onClick={(e) => this.accessory(e)}>
+                <span className="nav" className="nav-selected" onClick={(e) => this.accessory(e)}>
                 {" "}
                 Accessory
                 </span>
@@ -178,7 +178,7 @@ class UserAcceuil extends React.Component {
             Accessory
             </span>
              <div className="leftnav">
-            <span className="nav" onClick={(e) => this.profile(e)}>
+            <span className="nav" className="nav-selected" onClick={(e) => this.profile(e)}>
              {" "}
              Profile
             </span>
