@@ -128,6 +128,40 @@ app.put('/purchase/:id',async(req,res)=>{
   await Purchase.findByIdAndUpdate(req.params.id,req.body)
   res.json({'message':'spacific data updated'})
 })
+//Crud for comments schema
+const Comment = require('./Schema/Comments.js')
+
+app.get('/comment',async(req,res)=>{
+  await Comment.find({},(err,data)=>{
+    res.json(data)
+  })
+});
+app.get('/comment/:id',async(req,res)=>{
+  await Comment.findById(req.params.id,(err,data)=>{
+    res.json(data)
+  })
+})
+app.post('/comment/add',async(req,res)=>{
+  newComment = new Comment ({
+     user: req.body.user,
+     text:req.body.text,
+   
+  })
+  await newComment.save(()=>{res.json(newComment)})
+})
+app.delete('/comment',async(req,res)=>{
+  await Comment.deleteMany(req.params.id,req.body)
+  res.json({'message':'all data deleted'})
+})
+app.delete('/comment/:id',async(req,res)=>{
+  await Comment.findByIdAndDelete(req.params.id,req.body)
+  res.json({'message':'spacific data deleted'})
+})
+app.put('/comment/:id',async(req,res)=>{
+  await Comment.findByIdAndUpdate(req.params.id,req.body)
+  res.json({'message':'spacific data updated'})
+})
+
 //server listening
 const port = 3000
 app.listen(port, () => {
