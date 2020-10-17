@@ -6,7 +6,7 @@ import Phone from "./Phone.jsx"
 import Accessory from "./Accessory.jsx"
 import Profile from "./Profile.jsx"
 import Organisation from "./Organisation.jsx"
-
+import Comments from "./Comments.jsx"
 class UserAcceuil extends React.Component {
     constructor(props){
     super(props)
@@ -20,6 +20,7 @@ class UserAcceuil extends React.Component {
      this.phone=this.phone.bind(this)
      this.accessory=this.accessory.bind(this)
      this.profile=this.profile.bind(this)
+     this.comments = this.comments.bind(this)
    }
    componentDidMount(){
        this.setState({
@@ -56,6 +57,12 @@ class UserAcceuil extends React.Component {
          check:"profile"
         })
     }
+    comments(e){
+        e.preventDefault()
+        this.setState({
+        check:"comments"
+    })
+    }
          
         render(){
             if(this.state.check === "laptop"){
@@ -82,6 +89,9 @@ class UserAcceuil extends React.Component {
                 <span className="nav" onClick={(e) => this.profile(e)}>
                  {" "}
                  Profile
+                </span>
+                <span className="nav" onClick={(e) => this.comments(e)}>
+                     Comments
                 </span>
                </div>
                 </div>
@@ -116,6 +126,9 @@ class UserAcceuil extends React.Component {
                  {" "}
                  Profile
                 </span>
+                <span className="nav" onClick={(e) => this.comments(e)}>
+                     Comments
+                </span>
                </div>
                 </div>
                 <div className="main" > 
@@ -148,6 +161,9 @@ class UserAcceuil extends React.Component {
                 <span className="nav" onClick={(e) => this.profile(e)}>
                  {" "}
                  Profile
+                </span>
+                <span className="nav" onClick={(e) => this.comments(e)}>
+                     Comments
                 </span>
                </div>
                 </div>
@@ -182,6 +198,9 @@ class UserAcceuil extends React.Component {
              {" "}
              Profile
             </span>
+            <span className="nav" onClick={(e) => this.comments(e)}>
+                     Comments
+                </span>
            </div>
             </div>
             <div className="main" > 
@@ -215,10 +234,49 @@ class UserAcceuil extends React.Component {
                  {" "}
                  Profile
                 </span>
+                <span className="nav" onClick={(e) => this.comments(e)}>
+                     Comments
+                </span>
                </div>
                 </div>
                 <div className="main" > 
                     <Organisation name={this.state.user}/>
+                    </div>
+    
+                </div>
+                 )
+            }else if(this.state.check === "comments"){
+                return(
+                    <div>
+                  
+                   <div className="navbar">
+                <span className="logo"
+                  onClick={(e) => this.organisation(e)}>
+                     TECHNOSHOP🛒
+                     </span>
+                <span className="nav" onClick={(e) => this.laptop(e)}>
+                     Laptop
+                      </span>
+                <span className="nav" onClick={(e) => this.phone(e)}> 
+                    {" "}
+                   Phone
+                  </span>
+                <span className="nav" onClick={(e) => this.accessory(e)}>
+                {" "}
+                Accessory
+                </span>
+                 <div className="leftnav">
+                <span className="nav" onClick={(e) => this.profile(e)}>
+                 {" "}
+                 Profile
+                </span>
+                <span className="nav" onClick={(e) => this.comments(e)}>
+                     Comments
+                </span>
+               </div>
+                </div>
+                <div className="main" > 
+                    <Comments name={this.state.user}/>
                     </div>
     
                 </div>
